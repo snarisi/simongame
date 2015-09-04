@@ -1,0 +1,229 @@
+body {
+  background-color: #D7CCC8;
+  font-family: "Titillium Web", serif;
+}
+
+#board {
+  max-width: 500px;
+  min-width: 360px;
+  margin: 0 auto;
+}
+
+#info {
+  max-width: 300px;
+  min-width: 175px;
+  height: 140px;
+  border: solid 1px black;
+  margin: -50px auto 0 auto;
+  padding: 60px 0 0 0;
+  text-align: center;
+  background-color: #EFEBE9;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+#red {
+  background-color: #D32F2F;
+}
+
+#blue {
+  background-color: #1976D2;
+}
+
+#green {
+  background-color: #388E3C;
+}
+
+#yellow {
+  background-color: #FBC02D;
+}
+
+.lit#yellow, #yellow:active {
+  background-color: #FFF176!important;
+}
+
+.lit#red, #red:active {
+  background-color: #E57373!important;
+}
+
+.lit#blue, #blue:active {
+  background-color: #64B5F6!important;
+}
+
+.lit#green, #green:active {
+  background-color: #81C784!important;
+}
+
+.color {
+  width: 175px;
+  height: 116px;
+  cursor: pointer;
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+}
+
+.color:active {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.row div {
+  display: inline-block;
+}
+
+.row div:nth-child(2) {
+  float: right;
+}
+
+.row:first-child {
+  margin-top: 50px;
+}
+
+.row:nth-last-child(1) {
+  margin-top: -50px;
+}
+
+#start, #reset {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  width: 100px;
+  margin: 0 auto 5px auto;
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+  font-weight: 600;
+}
+
+#start:active, #reset:active {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+#strict {
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+  width: 100px;
+  cursor: pointer;
+  margin: 5px auto;
+  border-radius: 2px;
+  font-weight: 600;
+}
+
+#strict.pressed, #strict:active {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  color: #D32F2F;
+}
+
+#number {
+  width: 24px;
+  height: 20px;
+  background-color: #D7CCC8;
+  border: solid 1px black;
+  margin-bottom: -5px;
+  padding-bottom: 3px;
+}
+
+.prompt {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  width: 100%;
+}
+
+#play-again, #try-again {
+  position: relative;
+  margin: 0 auto;
+  max-width: 400px;
+  background-color: black;
+  color: white;
+  max-width: 300px;
+  height: 200px;
+  text-align: center;
+  border-radius: 5px;
+  -webkit-animation: grow 250ms ease-out;
+  -moz-animation: grow 250ms ease-out;
+  animation: grow 250ms ease-out;
+  overflow: hidden;
+}
+
+h3 {
+  font-size: 30px;
+  margin: 0;
+}
+
+p {
+  font-size: 24px;
+  margin: 10px 0 10px 0;
+}
+
+.button {
+  background: white;
+  color: black;
+  cursor: pointer;
+  margin: 2px 0 2px 0;
+}
+
+.button {
+  position: absolute;
+  bottom: 1px;
+  width: 100%;
+}
+
+.button.yes {
+  bottom: 30px;
+}
+
+@-webkit-keyframes grow {
+  from {
+    height: 0;
+    max-width: 0;
+  }
+  to {
+    height: 200px;
+    max-width: 300px
+  }
+}
+
+@-moz-keyframes grow {
+  from {
+    height: 0;
+    max-width: 0;
+  }
+  to {
+    height: 200px;
+    max-width: 300px
+  }
+}
+
+@keyframes grow {
+  from {
+    height: 0;
+    max-width: 0;
+  }
+  to {
+    height: 200px;
+    max-width: 300px
+  }
+}
+
+.dim {
+  opacity: 0.2;
+}
+
+.dim-background {
+  background-color: red!important;  
+}
+
+@media (max-width: 375px) {
+  .color {
+    width: 150px;
+  }
+  #board {
+    min-width: 275px;
+  }
+  #info {
+    min-width: 275px;
+  }
+}
+
+@media (max-width: 320px) {
+  .color {
+    width: 135px;
+  }
+}

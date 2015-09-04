@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Simon Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="game.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+  </head>
+  
+  <body ng-app="simonApp" ng-controller="GameCtrl">
+    <div>
+    
+      <div id="board" ng-class="{dim: gameOver || wrongMove}">
+        <div class="row">
+          <div class="color" id="red" ng-click="pressButton('R')" ng-class="{lit: checkColor('R')}"></div>
+          <div class="color" id="green" ng-click="pressButton('G')" ng-class="{lit: checkColor('G')}"></div>
+        </div>
+        <div id="info">
+          <div id="start" ng-click="pressStart()" ng-show="!gameInProgress">START</div>
+          <div id="reset" ng-click="reset()" ng-show="gameInProgress">RESET</div>
+          <div id="count" class="row">count: <div id="number">{{totalSteps}}</div></div>
+          <div id="strict" ng-click="toggleStrict()" ng-class="{pressed: strict}">STRICT</div>
+        </div>
+        <div class="row">
+          <div class="color" id="blue" ng-click="pressButton('B')" ng-class="{lit: checkColor('B')}"></div>
+          <div id="yellow" class="color" ng-click="pressButton('Y')" ng-class="{lit: checkColor('Y')}"></div>
+        </div>
+      </div>
+      <br>
+      
+      <div class="prompt">
+        <div id="play-again" ng-show="gameOver">
+          <h3>Bummer!</h3>
+          <p>You made it {{totalSteps}} steps.</p>
+          <p>Play again?</p>
+          <div class="button yes" ng-click="pressStart()">Yes</div>
+          <div class="button no" ng-click="reset()">No</div>
+        </div>
+      </div>
+      
+      <div class="prompt">
+        <div id="try-again" ng-show="wrongMove">
+          <h3>Whoops!</h3>
+          <p>Try again.</p>
+          <div class="button" ng-click="tryAgain()">OK</div>
+        </div>
+      </div>
+    
+    </div>
+  
+  </body>
+
+</html>
